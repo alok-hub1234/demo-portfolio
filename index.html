@@ -120,10 +120,18 @@ section {
   content: "";
   position: absolute;
   inset: 0;
-  background:
+  /*background:
     linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)),
     url('img/gradient.png') no-repeat center center;
+    background-size: cover;
+  */
+  background-image:
+    linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)),
+    url('img/gradient.png');
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
+  
   z-index: 1;
 }
 
