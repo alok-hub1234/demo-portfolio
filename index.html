@@ -1059,6 +1059,7 @@ section {
 <button id="goTopBtn" class="btn btn-primary"><i class="bi bi-arrow-up"></i></button>
 
 <script>
+document.addEventListener("DOMContentLoaded", function() {
 let currentIndex = 0;
 const services = [
   { icon: "bi-code-slash", title: "Web Development Solutions" },
@@ -1070,13 +1071,8 @@ function updateServicesFrame() {
   // Only run if page is visible
   if (!document.hidden) {
     currentIndex = (currentIndex + 1) % services.length;
-/*
-    document.getElementById("serviceIcon").innerHTML = `<i class="bi ${services[currentIndex].icon}"></i>`;
-    document.getElementById("serviceTitle").textContent = services[currentIndex].title;
-    document.getElementById("serviceIconMobile").innerHTML = `<i class="bi ${services[currentIndex].icon}"></i>`;
-    document.getElementById("serviceTitleMobile").textContent = services[currentIndex].title;
-*/
- if (!document.getElementById("serviceIcon")) {
+
+  if (!document.getElementById("serviceIcon")) {
     document.getElementById("serviceIcon").innerHTML = `<i class="bi ${services[currentIndex].icon}"></i>`;
   }
   if (!document.getElementById("serviceTitle")) {
@@ -1097,6 +1093,7 @@ function updateServicesFrame() {
 
 // Start the loop
 requestAnimationFrame(updateServicesFrame);
+});
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
