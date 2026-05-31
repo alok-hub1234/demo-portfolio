@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ClientName</title>
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<style>
+:root {
+  --nav-bg: #061A40;
+  --nav-hover: #B9D6F2;
+  --nav-text: #ffffff;
+}
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+}
+section {
+  scroll-margin-top: 80px;
+}
+
+.page-wrapper {
+  overflow-x: hidden;
+}
+[data-aos] {
+  overflow: hidden;
+}
+
+/* NAVBAR */
+
+.navbar-custom {
+    background-color: var(--nav-bg);
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar-nav .nav-link {
+    color: var(--nav-text);
+    font-weight: 500;
+    transition: all 0.25s ease;
+    font-size: 1.1rem;
+    padding: 0.6rem 1rem;
+}
+
+.navbar-brand h3 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active { 
+  background-color: var(--nav-hover); 
+  color: #061A40; 
+}
+
+.navbar-nav .nav-link:focus {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.social-icons a { cursor: pointer; }
+
+.social-icons i {
+  font-size: 1rem;
+  color: var(--nav-text);
+  transition: 0.2s;
+}
+
+.social-icons a { padding: 0 6px; }
+
+.social-icons i:hover {
+  transform: scale(1.15);
+  opacity: 0.8;
+}
+
+/* DROPDOWN */
+
+.dropdown-menu {
+  background-color: var(--nav-hover);
+  border: none;
+  border-radius: 0;
+  margin-top: 0.5rem;
+  width: 13.75rem;
+}
+
+.dropdown-item {
+  color: #fff;
+  padding: 0.7rem 1.4rem;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+/* BANNER */
+
+.banner-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding-top: 1.875rem;
+  padding-bottom: 1.875rem;
+}
+
+.banner-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)),
+    url('/img/layout1/gradient.png') no-repeat center center;
+  background-size: cover;
+  z-index: 1;
+}
+
+.banner-section .container {
+  position: relative;
+  z-index: 10;
+}
+
+.banner-section h1,
+.banner-section h2,
+.banner-section p {
+  text-align: center;
+}
+
+.banner-section .btn {
+  display: block;
+  margin: 0 auto;
+}
+
+/* GLASS CARD */
+@keyframes shine {
+  0% { transform: translateX(-100%) rotate(25deg); }
+  100% { transform: translateX(100%) rotate(25deg); }
+}
+
+.glass-style {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  position: relative;
+  z-index: 11;
+  overflow: hidden;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+.glass-style::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0.05) 30%,
+    rgba(255,255,255,0.35) 50%,
+    rgba(255,255,255,0.05) 70%
+  );
+  transform: rotate(25deg);
+  animation: shine 6s infinite linear;
+}
+
+.equal-height {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: auto;
+}
+
+/* SERVICE CARD */
+
+.service-card {
+  background: rgba(255,255,255,0.15);
+  border-radius: 18px;
+  padding: 1.75rem 1.25rem;
+  width: 100%;
+  max-width: 500px;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.service-card i { font-size: 3rem; }
+
+.service-card h3 {
+  margin-top: 0;
+  font-weight: 600;
+  font-size: 1.62rem!important;
+}
+
+/* ABOUT */
+
+.aboutus-blocks { background-color: #a4c5e7 }
+
+.aboutus-detail { background-color: #003559 }
+
+.gradient-box {
+  min-height: 250px;
+  background: linear-gradient(135deg, #b3a833, #F7EF99)
+}
+
+.gradient-box span { opacity: 0.8 }
+
+.gradient-alt {
+  background: linear-gradient(135deg, #7cd543, #b5e596)
+}
+
+.image-box {
+  width:250px;
+  height:250px;
+  margin:auto;
+  border-radius:50%;
+  overflow:hidden;
+}
+
+.aboutus {
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+  color: #a5ade9;
+}
+
+/* SERVICES */
+
+.services-block { background-color: #e0eff7 }
+
+.service-card-bg1 { background-color:#d9b445;color:#fff }
+
+.service-card-bg2 { background-color:#0fa962;color:#fff }
+
+.service-card-bg3 { background-color:#ed505f;color:#fff }
+
+.servicesIcon { font-size:4rem }
+
+/* BUTTON */
+
+.btncustom {
+  background-color:#061A40;
+  color:#fff;
+  transition:background-color .25s ease,transform .2s ease;
+}
+
+.btncustom:hover{
+  background-color:#445983;
+  color:#fff;
+  transform:translateY(-2px);
+}
+
+/* Focus state (keyboard accessible) */
+.btncustom:focus {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 0.25rem rgba(6,26,64,0.3);
+  background-color: #061A40; /* keep original */
+  color: #fff;
+}
+
+/* Active state (mouse click) */
+.btncustom:active {
+  transform: translateY(0);
+  background-color: #061A40!important; /* enforce original bg */
+  color: #fff!important;               /* enforce text color */
+  box-shadow: none;          /* remove Bootstrap shadow */
+}
+/* WORK */
+
+.workpara { padding-right:1.25rem }
+
+.work-card{
+  padding:1rem;
+  border-radius:12px;
+  color:#fff;
+}
+
+.work-card-1{background:#FE7F2D}
+.work-card-2{background:#8AC926}
+.work-card-3{background:#FCCA46}
+.work-card-4{background:#619B8A}
+
+/* PORTFOLIO */
+
+.portfolio-bg { background:#f9f6f6 }
+
+.portfolio-cardbg { background:#fff0f0 }
+
+.badge-custom {
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.35em 0.7em;
+  letter-spacing: 0.02em;
+}
+.badge-custom-bg1 {
+  background-color: #c4a106!important;
+}
+.badge-custom-bg2 {
+  background-color: #E67E22!important;
+}
+.badge-custom-bg3 {
+  background-color: #574964!important;
+}
+.badge-custom-bg4 {
+  background-color: #303645!important;
+}
+
+
+/* TESTIMONIALS */
+
+.testimonials { background:#f9e7c7 }
+
+.testimonials-card {
+  background:#ffe5b8;
+  border:1px solid #e3c289;
+}
+
+.testimonials-card img{
+  width:50px;
+  height:50px;
+  object-fit:cover;
+}
+
+/* CONTACT */
+
+.contact-detail{
+  background:#18346b;
+  color:#a5ade9;
+}
+
+/* FOOTER */
+
+.footer-custom{background:var(--nav-bg)}
+
+.footer-custom a:hover{
+  text-decoration:underline!important;
+  color:#B9D6F2!important;
+}
+
+.footer-bottom{color:#a5ade9}
+
+#goTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  border-radius: 50%;
+  padding: 10px 15px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s ease;
+  background: #0d6efd; /* Bootstrap primary */
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+#goTopBtn.show {
+  opacity: 1;
+  visibility: visible;
+}
+#goTopBtn:hover {
+  transform: translateY(-3px);
+}
+
+/* =====================
+   TABLET ≥768px
+===================== */
+
+@media (min-width:768px){
+  .service-card{
+    max-width:500px;
+  }
+}
+
+/* =====================
+   DESKTOP ≥992px
+===================== */
+
+@media (min-width:992px){
+  .banner-section{
+    padding-top:60px;
+    padding-bottom:60px;
+  }
+
+  .service-card{
+    flex-direction:column;
+    text-align:center;
+    padding:3.75rem 1.875rem;
+    max-width:365px;
+  }
+
+  .service-card i{font-size:5rem}
+
+  .service-card h3{
+    margin-top:.3rem;
+    font-size:1.5rem!important;
+  }
+
+  .aboutus{
+    font-size:5rem;
+    font-weight:900;
+  }
+
+  .image-box{
+    width:100%;
+    height:250px;
+    border-radius:0;
+  }
+  .glass-style {
+      align-items: flex-start; /* left align children */
+      text-align: left;        /* fallback for inline text */
+  }
+ .glass-style p {
+    text-align: left;
+  }
+}
+
+@media (min-width:992px) and (max-height:780px){
+  .banner-section{
+    min-height:calc(100vh - 90px);
+  }
+}
+
+/* =====================
+   LARGE DESKTOP ≥1200px
+===================== */
+
+@media (min-width:1200px){
+  .service-card{
+    padding:2.8125rem 1.5625rem;
+  }
+
+  .service-card i{font-size:4rem}
+
+  .service-card h3{
+    font-size:1.8rem!important;
+  }
+}
+</style>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom py-3 sticky-top">
+  <div class="container-fluid px-4 px-lg-3 px-xl-4 px-xxl-5">
+    <a class="navbar-brand" href="#"><h3>DEMOWEB</h3></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-lg-end" id="navbarContent">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link px-3" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="#work">How We Work</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="#portfolio">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="#contact">Contact</a></li>
+
+        <li class="nav-item d-none d-lg-flex align-items-center social-icons mx-3">
+          <a href="#" aria-label="Facebook"><i class="bi bi-facebook" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Twitter"><i class="bi bi-twitter" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/in/alok-kunwar-056a52271/" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+        </li>
+        <!--
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle px-3" href="#" role="button" data-bs-toggle="dropdown">
+            Profile
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">View Profile</a></li>
+            <li><a class="dropdown-item" href="#">Logout</a></li>
+          </ul>
+        </li>-->
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+<!-- Banner -->
+<section class="banner-section text-white">
+  <div class="container-fluid px-4 px-lg-3 px-xl-4 px-xxl-5">
+
+    <!-- Desktop Version (lg and up) -->
+    <div class="row d-none d-lg-flex">
+
+      <!-- LEFT -->
+      <div class="col-lg-8 d-flex">
+        <div class="glass-style d-flex flex-column justify-content-center w-100 px-5 mb-lg-0">
+          <h1 class="display-4 fw-bold mb-2">Welcome!</h1>
+          <h2 class="fw-normal mb-3">to Demo Template</h2>
+          <p class="lead mb-4">
+            Freelance Developer offering Web Development, UI/UX Design, and API Integration, building an online presence
+          </p>
+          <div class="d-flex justify-content-start">
+            <a href="#about" class="btn btn-light btn-lg w-auto">Know About Me</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="col-lg-4 d-flex">
+        <div class="glass-style equal-height w-100 d-flex justify-content-center align-items-center mb-lg-0">
+          <div class="service-card" id="serviceCard">
+            <div id="serviceIcon">
+              <i class="bi bi-code-slash" aria-hidden="true"></i>
+            </div>
+            <h3 id="serviceTitle">Web Development Solutions</h3>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Mobile & Tablet Version (below lg) -->
+    <div class="d-lg-none">
+      <div class="glass-style mb-0">
+
+        <!-- LEFT CONTENT -->
+        <h1 class="display-5 fw-bold mb-2 text-center">Welcome!</h1>
+        <h2 class="fw-normal mb-3 text-center">to Demo Template</h2>
+        <p class="lead mb-4 text-center">
+          Freelance Developer offering Web Development, UI/UX Design, and API Integration, building an online presence
+        </p>
+
+        <div class="d-flex justify-content-center mb-4">
+          <a href="#" class="btn btn-light btn-lg col-12 col-md-4">Know About Me</a>
+        </div>
+
+        <hr class="border-light opacity-50">
+
+        <!-- RIGHT CONTENT -->
+        <div class="d-flex justify-content-center align-items-center">
+          <div class="service-card" id="serviceCardMobile">
+            <div id="serviceIconMobile">
+              <i class="bi bi-code-slash" aria-hidden="true"></i>
+            </div>
+            <h3 id="serviceTitleMobile" class="m-0">Web Development Solutions</h3>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="py-3 py-lg-5 aboutus-blocks" id="about">
+    <div class="container-fluid px-4 px-lg-3 px-xl-4 px-xxl-5">
+        <div class="row g-3">
+
+            <!-- 40% Experience -->
+            <div class="col-md-6 col-lg-4 col-xl-5 col-12">
+                <div class="gradient-box d-flex align-items-start flex-column gap-3 p-4 py-md-5 px-lg-4 py-lg-5 p-xl-5 text-white rounded h-100">
+                        <h3 class="fw-bold">Professional Web Developer</h3>
+                        <p class="lead">5+ Years delivering modern and scalable web applications</p>
+                        <span class="badge bg-light text-dark p-2 fs-6 fw-normal">✔ Building impactful web solutions</span>
+                </div>
+            </div>
+
+            <!-- 40% Projects + Availability -->
+            <div class="col-md-6 col-lg-4 col-xl-5 col-12" data-aos="fade-up" data-aos-anchor-placement="top-center">
+                <div class="gradient-box gradient-alt d-flex align-items-start flex-column gap-3 p-4 py-md-5 px-lg-4 py-lg-5 p-xl-5 text-white rounded h-100">
+                        <h3 class="fw-bold">Web Projects</h3>
+                        <p class="lead">Worked as a Web Developer on deployed & client-facing applications</p>
+                        <span class="badge bg-light text-dark mt-2 p-2 fs-6 fw-normal">✔ Available for Freelance Projects</span>
+                </div>
+            </div>
+
+            <!-- 20% Personal Image -->
+            <div class="col-lg-4 col-xl-2 col-12" data-aos="zoom-in" data-aos-anchor-placement="top-center">
+                <div class="image-box mobile-rounded overflow-hidden h-100">
+                    <img src="<?= base_url('/img/layout1/messages2.jpg') ?>" 
+                         class="img-fluid w-100 h-100 object-fit-cover profile-image" 
+                         alt="Profile Image" loading="lazy">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- About Us Content Section -->
+<section class="py-4 py-lg-5 aboutus-detail" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+    <div class="container-fluid px-4 px-lg-3 px-xl-4 px-xxl-5">
+        <div class="row align-items-center">
+            
+            <!-- Left Block -->
+            <div class="col-lg-5">
+                <h2 class="aboutus">About Us</h2>
+            </div>
+
+            <!-- Right Block -->
+            <div class="col-lg-7">
+                <p class="lead text-white">
+                    We are a passionate team dedicated to delivering high-quality digital solutions.
+                    Our expertise spans web development, UI/UX design, and modern application architecture.
+                    We focus on innovation, performance, and user experience to help businesses grow.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="py-5 services-block" id="services" data-aos="fade-left" data-aos-anchor-placement="top-center">
+    <div class="container-fluid px-4 px-lg-3 px-xl-4 px-xxl-5 pt-2 pt-lg-5">
+        <!-- Section Title -->
+        <div class="text-center mb-4">
+            <h2 class="display-4 fw-bold mb-2 services text-dark">Smart Web Solutions</h2>
+            <p class="text-muted mb-5 lead fst-italic">Modern, scalable, and user-focused web development.</p>
+        </div>
+
+        <div class="row g-4">
+            <!-- Service 1 -->
+            <div class="col-md-6 col-lg-4" data-aos="fade-up">
+                <div class="card border-0 shadow h-100 text-start p-4 service-card-bg1">
+                    <div class="mb-1">
+                        <i class="bi bi-code-slash text-white servicesIcon" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="fw-bold">Web Development Solutions</h3>
+                    <ul class="list-unstyled small fs-5">
+                      <li>✓ Responsive websites & web apps</li>
+                      <li>✓ Scalable architecture</li>
+                      <li>✓ Secure authentication & data</li>
+                      <li>✓ High performance & SEO-ready</li>
+                      <li>✓ API & third-party integrations</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="col-md-6 col-lg-4" data-aos="fade-up">
+                <div class="card border-0 shadow h-100 text-start p-4 service-card-bg2">
+                    <div class="mb-1">
+                        <i class="bi bi-palette text-white servicesIcon" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="fw-bold">Creative UI/UX Solutions</h3>
+                    <ul class="list-unstyled small fs-5">
+                      <li>✓ Modern, user-centered interface design</li>
+                      <li>✓ Wireframing & interactive prototypes</li>
+                      <li>✓ Mobile-first and responsive layouts</li>
+                      <li>✓ Accessibility and usability optimization</li>
+                      <li>✓ Design systems & consistent branding</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="col-md-6 col-lg-4" data-aos="fade-up">
+                <div class="card border-0 shadow h-100 text-start p-4 service-card-bg3">
+                    <div class="mb-1">
+                        <i class="bi bi-gear text-white servicesIcon" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="fw-bold">API & Workflow Automation</h3>
+                    <ul class="list-unstyled small fs-5">
+                      <li>✓ RESTful API development & integration</li>
+                      <li>✓ Business process automation</li>
+                      <li>✓ Third-party service integrations</li>
+                      <li>✓ Data sync between systems</li>
+                      <li>✓ Workflow optimization to save time</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-12 text-center py-5">
+            <button class="btn btncustom border-0 px-4 py-2 fs-5" data-bs-toggle="modal" data-bs-target="#projectModal"><i class="bi bi-rocket-takeoff" aria-hidden="true"></i> Start Your Project</button>
+          </div>
+        </div>
+    </div>
+</section>
+
+<!-- Work Process Content Section -->
+<section class="py-4 py-lg-5 bg-white" id="work" data-aos="zoom-in">
+    <div class="container-fluid px-4 px-lg-3 px-xl-4 px-xxl-5 py-5">
+        <div class="row align-items-center">
+            <!-- Left Block (Title + Description) -->
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <h1 class="display-4 fw-bold mb-4 workprocess">How We Work</h1>
+                <p class="lead workpara">Our process starts with understanding your business goals and transforming your ideas into effective digital solutions. We focus on careful planning and thoughtful design to ensure every project begins with a clear direction and strategy.</p>
+                <p class="lead workpara">From development to final delivery, each stage is managed with attention to detail and quality. This structured approach helps us deliver reliable results while ensuring a smooth and professional experience for our clients.</p>
+                <p class="lead workpara">We also believe in clear communication and continuous improvement throughout the project. By staying aligned with your vision and feedback, we ensure the final solution truly supports your business growth.</p>
+            </div>
+
+            <!-- Right Block (4 Cards without glass effect) -->
+            <div class="col-lg-6" data-aos="zoom-in" data-aos-anchor-placement="top-center">
+              <div class="row">
+
+                <!-- Column 1 -->
+                <div class="col-12 col-md-6 d-flex flex-column gap-4">
+                    <!-- Card 1 -->
+                    <div class="work-card work-card-1">
+                        <i class="bi bi-lightning-charge display-4 mb-3" aria-hidden="true"></i>
+                        <h3 class="fw-bold">Ideation</h3>
+                        <p class="lead text-white">Brainstorming ideas and planning the best strategy.</p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="work-card work-card-2">
+                        <i class="bi bi-pencil-square display-4 mb-3" aria-hidden="true"></i>
+                        <h3 class="fw-bold">Design</h3>
+                        <p class="lead text-white">Creating wireframes and intuitive UI/UX designs.</p>
+                    </div>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="col-12 col-md-6 d-flex flex-column gap-4 pt-4">
+                    <!-- Card 3 -->
+                    <div class="work-card work-card-3">
+                        <i class="bi bi-code-slash display-4 mb-3" aria-hidden="true"></i>
+                        <h3 class="fw-bold">Development</h3>
+                        <p class="lead text-white">Writing clean, scalable code for modern web solutions.</p>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="work-card work-card-4">
+                        <i class="bi bi-check-circle display-4 mb-3" aria-hidden="true"></i>
+                        <h3 class="fw-bold">Delivery</h3>
+                        <p class="lead text-white">Testing and deploying polished web applications.</p>
+                    </div>
+                </div>
+
+              </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Portfolio Section -->
+<section id="portfolio" class="py-5 portfolio-bg" data-aos="fade-down">
+  <div class="container-fluid px-4 px-lg-3 px-xl-4 px-xxl-5 py-5">
+    <!-- Section Title -->
+    <div class="text-center mb-5">
+      <h2 class="display-4 fw-bold mb-2 portfolio text-dark">Portfolio</h2>
+      <p class="text-muted mb-5 lead fst-italic">A collection of demo projects demonstrating my expertise</p>
+    </div>
+
+    <!-- Card Grid -->
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <img src="/img/layout1/card.jpg" class="card-img-top" alt="Responsive Portfolio Demo" loading="lazy">
+          <div class="card-body d-flex flex-column portfolio-cardbg">
+            <h3 class="card-title fw-bold">Responsive Portfolio Demo</h3>
+            <p class="card-text flex-grow-1 lead">
+              A modern, responsive portfolio template demo showcasing web development skills using Bootstrap 5 and clean UI design principles.
+            </p>
+            <div class="mb-2">
+              <span class="badge rounded-pill text-white me-1 badge-custom badge-custom-bg1">Bootstrap 5</span>
+              <span class="badge rounded-pill text-white badge-custom badge-custom-bg2">Codeigniter</span>
+              <span class="badge rounded-pill text-white badge-custom badge-custom-bg3">PHP</span>
+              <span class="badge rounded-pill text-white badge-custom badge-custom-bg4">MySQL</span>
+            </div>
+            <div class="mt-auto">
+              <a href="https://github.com/yourusername/portfolio-demo" class="btn btn-outline-dark btn-sm me-2" target="_blank">GitHub</a>
+              <a href="#" class="btn btn-outline-success btn-sm" target="_blank">Live Demo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <img src="/img/layout1/card.jpg" class="card-img-top" alt="E-commerce Demo App" loading="lazy">
+          <div class="card-body d-flex flex-column portfolio-cardbg">
+            <h3 class="card-title fw-bold">E-commerce Demo App</h3>
+            <p class="card-text flex-grow-1 lead">
+              A fully responsive e-commerce demo with product listing, shopping cart, and user registration built using CodeIgniter 4 and Bootstrap 5.
+            </p>
+            <div class="mb-2">
+              <span class="badge rounded-pill text-white me-1 badge-custom badge-custom-bg1">Bootstrap 5</span>
+              <span class="badge rounded-pill text-white badge-custom badge-custom-bg2">Codeigniter</span>
+              <span class="badge rounded-pill text-white badge-custom badge-custom-bg3">PHP</span>
+              <span class="badge rounded-pill text-white badge-custom badge-custom-bg4">MySQL</span>
+            </div>
+            <div class="mt-auto">
+              <a href="https://github.com/yourusername/blog-demo" class="btn btn-outline-dark btn-sm me-2" target="_blank">GitHub</a>
+              <a href="#" class="btn btn-outline-success btn-sm" target="_blank">Live Demo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Card 3 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <img src="/img/layout1/admin.jpg" class="card-img-top" alt="Admin Panel Demo" loading="lazy">
+          <div class="card-body d-flex flex-column portfolio-cardbg">
+            <h3 class="card-title fw-bold">Admin Panel Demo</h3>
+            <p class="card-text flex-grow-1 lead">
+              A dynamic admin panel for managing and updating website content efficiently.
+            </p>
+            <div class="mb-2">
+              <span class="badge rounded-pill text-white me-1 badge-custom badge-custom-bg1">Bootstrap 5</span>
+              <span class="badge rounded-pill text-white badge-custom badge-custom-bg2">Codeigniter</span>
+              <span class="badge rounded-pill text-white badge-custom badge-custom-bg3">PHP</span>
+              <span class="badge rounded-pill text-white badge-custom badge-custom-bg4">MySQL</span>
+            </div>
+            <div class="mt-auto">
+              <a href="https://github.com/yourusername/blog-demo" class="btn btn-outline-dark btn-sm me-2" target="_blank">GitHub</a>
+              <a href="#" class="btn btn-outline-success btn-sm" target="_blank">Live Demo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- Coming Soon Note (Optional) -->
+    <div class="text-center mt-5">
+      <p class="text-muted lead fst-italic">More projects coming soon!</p>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="py-5 testimonials" data-aos="flip-left">
+  <div class="container-fluid px-4 px-lg-3 px-xl-4 px-xxl-5 py-5">
+    <!-- Section Title -->
+    <div class="text-center mb-5">
+      <h2 class="display-4 fw-bold mb-2 portfolio text-dark">Professional Highlights</h2>
+      <p class="text-muted mb-5 lead fst-italic">Professional highlights and demo project endorsements</p>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="row g-4 justify-content-center">
+      
+      <!-- Card 2: GitHub Demo / Self Highlight -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm testimonials-card">
+          <div class="card-body d-flex flex-column">
+            <p class="card-text fst-italic flex-grow-1">
+              “Developed scalable and well-structured CodeIgniter 4 modules, demonstrating clean and maintainable code.”
+            </p>
+            <div class="d-flex align-items-center mt-3">
+              <!-- Small rounded image -->
+              <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Demo" class="rounded-circle me-3" loading="lazy">
+              <div>
+                <h6 class="mb-0 fw-bold">GitHub Demo</h6>
+                <small class="text-muted">Professional Showcase</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Professional Highlight -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm testimonials-card">
+          <div class="card-body d-flex flex-column">
+            <p class="card-text fst-italic flex-grow-1">
+              “Over a decade of experience delivering scalable and maintainable web solutions.”
+            </p>
+            <div class="d-flex align-items-center mt-3">
+              <img src="/img/layout1/messages1.jpg" alt="Professional Highlight" class="rounded-circle me-3" loading="lazy">
+              <div>
+                <h6 class="mb-0 fw-bold">Professional Highlight</h6>
+                <small class="text-muted">10+ Years Web Development</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- /row -->
+  </div> <!-- /container -->
+</section>
+
+<!-- Contact Us Section -->
+<section class="py-5 bg-white" id="contact" data-aos="fade-up">
+    <div class="container-fluid px-4 px-lg-3 px-xl-4 px-xxl-5">
+
+        <!-- Section Title -->
+        <div class="text-center mb-5">
+          <h2 class="display-4 fw-bold mb-2 portfolio text-dark">Contact</h2>
+          <p class="text-muted mb-5 lead fst-italic">
+            Have a project in mind or need help with web development? Send a message and I’ll get back to you soon.
+          </p>
+        </div>
+
+        <!-- Upper Block -->
+        <div class="row justify-content-center mb-4">
+            <div class="col-lg-10">
+                <div class="row g-3">
+
+                    <!-- Address -->
+                    <div class="col-md-5 col-12" data-aos="flip-right" data-aos-anchor-placement="top-center">
+                        <div class="d-flex align-items-center flex-column p-3 p-md-4 p-lg-3 rounded h-100 contact-detail">
+                            <div class="text-center">
+                                <i class="bi bi-geo-alt-fill fs-1" aria-hidden="true"></i>
+                                <h3 class="fw-bold text-center">Address</h3>
+                                <address class="lead mb-4">1/1 Demo, Demo City, India</address>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="col-md-4 col-12" data-aos="zoom-in" data-aos-anchor-placement="top-center">
+                        <div class="d-flex align-items-center flex-column p-3 p-md-4 p-lg-3 rounded h-100 contact-detail">
+                            <div class="text-center">
+                                <i class="bi bi-envelope-fill fs-1" aria-hidden="true"></i>
+                                <h3 class="fw-bold text-center">Email Us</h3>
+                                <p class="lead mb-4">demo@developer.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mobile -->
+                    <div class="col-md-3 col-12" data-aos="flip-left" data-aos-anchor-placement="top-center">
+                        <div class="d-flex align-items-center flex-column p-3 p-md-4 p-lg-3 rounded h-100 contact-detail">
+                            <div class="text-center">
+                                <i class="bi bi-phone-fill fs-1"></i>
+                                <h3 class="fw-bold text-center">Call Us</h3>
+                                <p class="lead mb-4">+91 9999999999</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Lower Block (Contact Form) -->
+        <div class="row justify-content-center">
+    <div class="col-lg-10">
+
+        <div class="bg-white rounded-4 shadow-lg p-5 p-lg-6">
+
+            <div class="row justify-content-center">
+                <div class="col-md-11">
+                    
+                    <div id="response" class="mt-3"></div>
+                      <form id="contactForm" name="contactForm" enctype="multipart/form-data">
+
+                        <div class="row g-4">
+
+                            <!-- Name -->
+                            <div class="col-md-6">
+                                <label for="name" class="visually-hidden">Your Name</label>
+                                <input type="text" name="name" class="form-control py-3" placeholder="Your Name" autocomplete="name" required>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="col-md-6">
+                                <label for="email" class="visually-hidden">Your Email</label>
+                                <input type="email" name="email" id="email" class="form-control py-3" placeholder="Your Email" autocomplete="email" required>
+                            </div>
+
+                            <!-- Mobile -->
+                            <div class="col-md-6">
+                                <label for="mobile" class="visually-hidden">Your Mobile Number</label>
+                                <input type="text" name="mobile" id="mobile" class="form-control py-3" placeholder="Your Mobile Number" autocomplete="tel" required>
+                            </div>
+
+                            <!-- City -->
+                            <div class="col-md-6">
+                                <label for="city" class="visually-hidden">Your City</label>
+                                <input type="text" name="city" id="city" class="form-control py-3" placeholder="Your City" autocomplete="address-level2">
+                            </div>
+
+                            <!-- Message -->
+                            <div class="col-12">
+                                <label for="message" class="visually-hidden">Your Message</label>
+                                <textarea name="message" id="message" class="form-control py-3" rows="5" placeholder="Your Message" autocomplete="off" required></textarea>
+                            </div>
+
+                            <!-- Button -->
+                            <div class="col-12 text-center mt-3">
+                                <button type="submit" class="btn btncustom border-0 px-4 py-2 fs-5">
+                                    <i class="bi bi-send-fill" aria-hidden="true"></i> Send Message
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+</section>
+
+<footer class="text-light">
+    <div class="container-fluid px-4 px-lg-3 px-xl-4 px-xxl-5 pt-5 pb-2 footer-custom">
+        <div class="row align-items-start">
+
+            <!-- First Column: Client + Social -->
+            <div class="col-md-3 mb-4 text-start">
+                <h5 class="mb-3">DEMOWEB</h5>
+                <p class="small mb-2">
+                    Connect with us on social media:
+                </p>
+                <div class="d-flex gap-3">
+                    <a href="#" class="text-light fs-5" aria-label="Facebook"><i class="bi bi-facebook" aria-hidden="true"></i></a>
+                    <a href="#" class="text-light fs-5" aria-label="Twitter"><i class="bi bi-twitter" aria-hidden="true"></i></a>
+                    <a href="#" class="text-light fs-5" aria-label="Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+                    <a href="https://www.linkedin.com/in/alok-kunwar-056a52271/" target="_blank" aria-label="LinkedIn" class="text-light fs-5"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+                </div>
+            </div>
+
+            <!-- Grouped Right Columns: 2,3,4 -->
+            <div class="col-md-9">
+              <div class="row justify-content-end">
+                <!-- Second Column: Useful Links left part -->
+                <div class="col-md-3 text-start">
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="#" class="text-light text-decoration-none">Home</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">About Us</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Services</a></li>
+                    </ul>
+                </div>
+
+                <!-- Third Column: Useful Links right part -->
+                <div class="col-md-3 text-start">
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="#" class="text-light text-decoration-none">How We Work</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Blog</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Fourth Column: Policies -->
+                <div class="col-md-3 text-start">
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="#" class="text-light text-decoration-none">Privacy Policy</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Terms & Conditions</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Refund Policy</a></li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="text-center pt-3 border-top border-secondary mt-2 footer-bottom">
+            <small>
+                &copy; 2026 Client Name. Designed by Your Company.
+            </small>
+        </div>
+    </div>
+</footer>
+</div>
+
+<button id="goTopBtn" class="btn btn-primary"><i class="bi bi-arrow-up"></i></button>
+
+<script>
+let currentIndex = 0;
+const services = [
+  { icon: "bi-code-slash", title: "Web Development Solutions" },
+  { icon: "bi-palette", title: "Creative UX/UI Solutions" },
+  { icon: "bi-link-45deg", title: "API & Workflow Automation" }
+];
+
+function updateServicesFrame() {
+  // Only run if page is visible
+  if (!document.hidden) {
+    currentIndex = (currentIndex + 1) % services.length;
+
+    document.getElementById("serviceIcon").innerHTML = `<i class="bi ${services[currentIndex].icon}"></i>`;
+    document.getElementById("serviceTitle").textContent = services[currentIndex].title;
+    document.getElementById("serviceIconMobile").innerHTML = `<i class="bi ${services[currentIndex].icon}"></i>`;
+    document.getElementById("serviceTitleMobile").textContent = services[currentIndex].title;
+
+    //console.log("Updating service to:", services[currentIndex].title); // Debug
+  }
+
+  // Schedule next update
+  setTimeout(() => requestAnimationFrame(updateServicesFrame), 4000);
+}
+
+// Start the loop
+requestAnimationFrame(updateServicesFrame);
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+window.addEventListener('load', function () {
+  document.querySelectorAll('a.nav-link').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      const target = document.querySelector(this.getAttribute('href'));
+      const offset = 80;
+      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+      const startPosition = window.pageYOffset;
+      const distance = targetPosition - startPosition;
+      const duration = 1200;
+
+      let start = null;
+
+      function easeOutCubic(t) {
+        return 1 - Math.pow(1 - t, 3);
+      }
+
+      function animation(currentTime) {
+        if (!start) start = currentTime;
+        const timeElapsed = currentTime - start;
+
+        const progress = easeOutCubic(Math.min(timeElapsed / duration, 1));
+        const run = startPosition + distance * progress;
+
+        window.scrollTo(0, run);
+
+        if (timeElapsed < duration) {
+          requestAnimationFrame(animation);
+        } else {
+          window.scrollTo(0, targetPosition); // ensures exact stop
+        }
+      }
+
+      requestAnimationFrame(animation);
+    });
+  });
+});
+</script>
+
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({
+  duration: 1500,       // slower animation
+  easing: 'ease-in-out', // easing style
+  once: false,          // animate every time it scrolls into view
+  offset: 100           // distance from viewport before animation starts
+});
+</script>
+<script>
+  const btn = document.getElementById("goTopBtn");
+  window.onscroll = function () {
+    if (document.documentElement.scrollTop > 200) {
+      //btn.style.display = "block";
+      btn.classList.add("show");
+    } else {
+      //btn.style.display = "none";
+      btn.classList.remove("show");
+    }
+  };
+
+  btn.onclick = function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
+</script>
+</body>
+</html>
