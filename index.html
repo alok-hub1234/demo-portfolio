@@ -1071,7 +1071,7 @@ function updateServicesFrame() {
   // Only run if page is visible
   if (!document.hidden) {
     currentIndex = (currentIndex + 1) % services.length;
-
+alert(currentIndex);
   if (!document.getElementById("serviceIcon")) {
     document.getElementById("serviceIcon").innerHTML = `<i class="bi ${services[currentIndex].icon}"></i>`;
   }
