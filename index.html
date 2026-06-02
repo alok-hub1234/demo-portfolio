@@ -1072,16 +1072,16 @@ function updateServicesFrame() {
   if (!document.hidden) {
     currentIndex = (currentIndex + 1) % services.length;
 
-  if (!document.getElementById("serviceIcon")) {
+  if (document.getElementById("serviceIcon")) {
     document.getElementById("serviceIcon").innerHTML = `<i class="bi ${services[currentIndex].icon}"></i>`;
   }
-  if (!document.getElementById("serviceTitle")) {
+  if (document.getElementById("serviceTitle")) {
     document.getElementById("serviceTitle").textContent = services[currentIndex].title;
   }
-  if (!document.getElementById("serviceIconMobile")) {
+  if (document.getElementById("serviceIconMobile")) {
     document.getElementById("serviceIconMobile").innerHTML = `<i class="bi ${services[currentIndex].icon}"></i>`;
   }
-  if (!document.getElementById("serviceTitleMobile")) {
+  if (document.getElementById("serviceTitleMobile")) {
     document.getElementById("serviceTitleMobile").textContent = services[currentIndex].title;
   }
     //console.log("Updating service to:", services[currentIndex].title); // Debug
